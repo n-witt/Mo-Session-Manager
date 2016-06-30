@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body style="width: 200px; padding: 5px">
+   <div class="container">
+      <div class="row">
+         <button id="store" data-toggle="popover" data-html="true" data-content='' type="button" class="btn btn-md btn-primary col-xs-4">
+            <span class="glyphicon glyphicon-cloud-upload"></span>
+         </button>
+         <button id="restore" data-toggle="popover" data-html="true" data-content='' data-placement="left" type="button" class="btn btn-md btn-success col-xs-4 pull-right">
+            <span class="glyphicon glyphicon-cloud-download"></span>
+         </button>
+      </div>
+
+      <br>
+      <div class="row">
+         <a href="#" id="settings_btn">Settings 
+            <span class="glyphicon glyphicon-menu-down"></span>
+            <span class="glyphicon glyphicon-menu-up"></span>
+         </a>
+      </div>
+
+      <!--Setting -->
+      <div id="settings">
+         <div class="row">
+            <div class="input-group input-group-sm">
+               <input type="text" class="form-control" id="u_id" placeholder="Some ID" data-toggle="popover" data-html="true" data-content='' data-placement="top">
+               <span class="input-group-btn">
+                  <button class="btn btn-md btn-primary" type="button">
+                     <span class="glyphicon glyphicon-refresh"></span>
+                  </button>
+               </span>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="input-group input-group-sm">
+               <input type="text" class="form-control" id="host_url" placeholder="URL" data-toggle="popover" data-html="true" data-content='' data-placement="top">
+               <span class="input-group-btn">
+                  <button class="btn btn-md btn-primary" type="button">
+                     <span class="glyphicon glyphicon-refresh"></span>
+                  </button>
+               </span>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+   <script src="js/jquery.js"></script>
+   <script src="js/mo.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
