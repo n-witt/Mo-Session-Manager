@@ -1,3 +1,5 @@
+![](https://raw.githubusercontent.com/n-witt/screencasts/master/mo-demo.gif)
+
 # Mo - Session Manager
 If you have >10 open tabs in your browser for "later examination" and you are using several different machines across the day, this is for you.
 
