@@ -1,0 +1,26 @@
+{
+   "applications": {
+      "gecko": {
+         "id": "test@foo.bar"
+      }
+   },
+   "manifest_version": 2,
+
+   "name": "Mo - Session Manager",
+   "description": "Stores your browser session",
+   "version": "0.1",
+   "permissions": [
+      "activeTab",
+      "tabs",
+      "storage"
+   ],
+   "icons": {
+      "16": "icons/mo16.png",
+      "48": "icons/mo48.png",
+      "128": "icons/mo128.png"
+   },
+   "browser_action":{
+      "default_mo":"icons/mo19.png",
+      "default_popup": "mo.html"
+   }
+}
