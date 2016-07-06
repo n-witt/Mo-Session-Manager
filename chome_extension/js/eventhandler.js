@@ -10,7 +10,7 @@ require(['jquery', 'utilities'], function($, util){
     */
    // stores the current session on the host_url
    $('#store').click(function(){
-      util.getCurrentTabUrl(function(urls){
+      util.getCurrentTabUrl(true, function(urls){
          let host_url = $('#host_url').val();
          let u_id = $('#u_id').val();
          let request_url = host_url + '/push';
