@@ -6,7 +6,6 @@ from aiohttp import web
 from Key_value_storage import Key_value_storage
 from Route_Handlers import Route_Handlers
 
-    
 persistor = Key_value_storage()
 handlers = Route_Handlers(persistor)
 app = web.Application()

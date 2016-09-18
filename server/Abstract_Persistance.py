@@ -8,4 +8,3 @@ class Abstract_Persistance(ABC):
     @abstractmethod
     def pop(self, u_id):
         pass
-

@@ -1,4 +1,4 @@
-import json 
+import json
 from aiohttp import web
 from paste.util.multidict import MultiDict
 
@@ -10,11 +10,11 @@ class Route_Handlers:
 
     def _has_dead_params(self, given):
         return len(set(given).difference(self._allowed_params)) > 0
- 
+
     def _get_params(self, request):
         '''
         Returns the parameter from request, regardless their type
-        (GET OR POST) and return a MultiDict containg the values.
+        (GET OR POST) and returns a MultiDict containg the values.
         '''
         params = MultiDict()
         if request.method == 'POST':
@@ -30,7 +30,7 @@ class Route_Handlers:
                params.add(k, v)
         else:
            raise TypeError('You need to pass a Request obj')
-        
+
         return params
 
     async def pop(self, request):
@@ -64,7 +64,7 @@ class Route_Handlers:
            header = {'Access-Control-Allow-Origin': request.headers['origin']}
         else:
            header = {}
-         
+
         return web.Response(body=response.encode('utf8'), headers=header)
 
 
@@ -82,14 +82,14 @@ class Route_Handlers:
                 response = json.dumps({
                         'status': 'warning',
                         'msg': 'unused parameters passed',
-                    })
+                })
             else:
                 response = json.dumps({'status': 'ok'})
         else:
             response = json.dumps({'status': 'error',
                                    'msg': 'invalid query. u_id and ' + \
                                            'at least one urls field required'})
-            
+
         if 'origin' in request.headers:
            header = {'Access-Control-Allow-Origin': request.headers['origin']}
         else:

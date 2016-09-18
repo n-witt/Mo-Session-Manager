@@ -17,7 +17,9 @@ $ . activate mo
 Replace 'mo' with your favorite name. It's important to note here, that this is a Python project, not a Python2.x project! You'll need Python 3.5+.
 * Clone the Repository
 * Find `config.py` in the `server` directory and adapt it to your needs. It is a gunicorn config file. So if you have trouble, google for `gunicorn config file <problem description>`.
+* In the server directory execute `pip install -r requirements.txt` to install the requirements.
 * In order to start the server daemon, find `./start.sh` in the `server` directory and start it.
+
 ### Options
 * If you want to start the server in the foreground, remove the `-D` flag in `start.sh`
 * In case you need to increase the performance of the server, use a Nginx reverse proxy in front of gunicorn. [Here](https://www.digitalocean.com/community/tutorials/how-to-deploy-python-wsgi-apps-using-gunicorn-http-server-behind-nginx) you can find a guide.

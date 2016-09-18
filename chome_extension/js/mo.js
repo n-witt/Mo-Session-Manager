@@ -4,7 +4,7 @@
    var popover_indicators = {
       'success': '<span class="glyphicon glyphicon-ok" style="color: green"></span>',
       'warning': '<span class="glyphicon glyphicon-warning" style="color: yellow"></span>',
-      'error' : '<span class="glyphicon glyphicon-remove" style="color: red"></span>' 
+      'error' : '<span class="glyphicon glyphicon-remove" style="color: red"></span>'
    };
    var popover_timeout = 2000;
    /**
@@ -14,18 +14,18 @@
     *   is found.
     */
    function getCurrentTabUrl(callback) {
-     // Query filter to be passed to chrome.tabs.query - see
-     // https://developer.chrome.com/extensions/tabs#method-query
-     var queryInfo = {
-       currentWindow: true
-     };
+      // Query filter to be passed to chrome.tabs.query - see
+      // https://developer.chrome.com/extensions/tabs#method-query
+      var queryInfo = {
+         currentWindow: true
+      };
 
       chrome.tabs.query(queryInfo, function(tabs) {
          var urls = [];
          for(i=0; i<tabs.length; i++){
             urls.push(tabs[i].url);
          }
-       callback(urls);
+         callback(urls);
      });
    }
 
@@ -42,12 +42,12 @@
    }
 
    function isURL(str) {
-     var pattern = new RegExp(/\b(https?|ftp|file):\/\/[\-A-Za-z0-9+&@#\/%?=~_|!:,.;]*[\-A-Za-z0-9+&@#\/%=~_|]/);
-     return pattern.test(str);
+      var pattern = new RegExp(/\b(https?|ftp|file):\/\/[\-A-Za-z0-9+&@#\/%?=~_|!:,.;]*[\-A-Za-z0-9+&@#\/%=~_|]/);
+      return pattern.test(str);
    }
    /*
     *
-    * Here comes the code that relies on a fully loaded DOM 
+    * Here comes the code that relies on a fully loaded DOM
     *
     */
    $(document).ready(function() {
@@ -67,8 +67,8 @@
          }
       });
 
-      // restore host url from local storage. if not present localhost:5000
-      // is hard-coded in the html document 
+      // restore host url from local storage. if not present, localhost:5000
+      // is hard-coded in the html document
       chrome.storage.local.get('host_url', function(storage) {
          if(typeof storage['host_url'] == 'string'){
             $('#host_url').val(storage['host_url']);
@@ -126,12 +126,12 @@
                console.log(msg);
                window.alert(msg);
             }
-         }).fail(function(data, status, xhr) { 
+         }).fail(function(data, status, xhr) {
             restore_btn = $('#restore');
             gen_popover(restore_btn, popover_indicators['error'], popover_timeout);
          });
       });
-      
+
       // hides and restores the settings widget
       $('.glyphicon-menu-up').hide();
       $('#settings').hide();

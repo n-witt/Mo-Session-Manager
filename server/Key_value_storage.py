@@ -5,8 +5,8 @@ import json
 
 class Key_value_storage(Abstract_Persistance):
     '''
-    This class is the most simplyfied storage class i could think of.
-    It only allows storing and fetching simple python dicts. 
+    This class is the most simplyfied storage class I could think of.
+    It only allows storing and fetching simple python dicts.
     Under the hood it uses a single json file.
     '''
     def __init__(self):
@@ -26,10 +26,9 @@ class Key_value_storage(Abstract_Persistance):
                 json.dump(self._dict, fh)
 
     def push(self, key='', value={}):
-        self._dict[key] = value 
+        self._dict[key] = value
         with open(self._filename, 'w') as fh:
             json.dump(self._dict, fh)
-    
+
     def pop(self, key=''):
         return self._dict[key]
-
